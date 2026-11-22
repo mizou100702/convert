@@ -48,6 +48,14 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 .trust span:before{content:"◆";color:var(--g);font-size:10px;margin-right:12px;vertical-align:3px}
 .foot{font-family:Cinzel;letter-spacing:.55em;color:#a89366;padding-left:.55em}
 
+.seal{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#120e08;background:var(--gold);transform:rotate(12deg);box-shadow:0 0 0 2px rgba(255,243,201,.5) inset,0 0 0 7px rgba(7,6,5,.85),0 0 0 8.5px rgba(216,181,106,.7),0 18px 50px rgba(0,0,0,.6);z-index:3}
+.seal .s1{font-weight:700;letter-spacing:.28em;padding-left:.28em}
+.seal .s2{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:.9}
+.seal .s3{font-weight:700;letter-spacing:.2em;padding-left:.2em}
+.story .seal{width:210px;height:210px;right:-140px;top:40px}
+.story .seal .s1{font-size:15px}.story .seal .s2{font-size:56px;margin:6px 0 4px}.story .seal .s3{font-size:14px}
+.post .seal{width:170px;height:170px;left:-95px;top:-100px;transform:rotate(-12deg)}
+.post .seal .s1{font-size:12px}.post .seal .s2{font-size:44px;margin:4px 0 3px}.post .seal .s3{font-size:11px}
 /* ===== STORY 1080x1920 ===== */
 .story{width:1080px;height:1920px}
 .story .bg{height:1300px}
@@ -110,6 +118,7 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
     <div class="sub">More than a destination — an experience.</div>
 
     <div class="price">
+      <div class="seal"><span class="s1">SAVE</span><span class="s2">-30%<small style="display:block;font-family:Montserrat;font-size:.24em;letter-spacing:.3em;margin:2px 0 4px;padding-left:.3em">TO</small>-70%</span><span class="s3">OFF FARES</span></div>
       <div class="lbl">BUSINESS CLASS · FROM</div>
       <div class="amt goldtxt">750<sup>€</sup></div>
       <div class="note">up to <b>1,200 €</b> depending on dates<br><b style="display:inline-block;margin-top:10px;letter-spacing:.3em;color:#f3dc9a">FIRST CLASS ON REQUEST</b></div>
@@ -160,6 +169,7 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 
     <div class="mid">
       <div class="price">
+        <div class="seal"><span class="s1">SAVE</span><span class="s2">-30%<small style="display:block;font-family:Montserrat;font-size:.24em;letter-spacing:.3em;margin:2px 0 4px;padding-left:.3em">TO</small>-70%</span><span class="s3">OFF FARES</span></div>
         <div class="lbl">FROM</div>
         <div class="amt goldtxt">750<sup>€</sup></div>
         <div class="note">up to <b>1,200 €</b> · First on request</div>
