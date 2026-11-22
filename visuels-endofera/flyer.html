@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
+:root{--gold:linear-gradient(115deg,#8a6a2f 0%,#e9cf8a 22%,#fff3c9 38%,#c9a254 55%,#f3dc9a 72%,#9c7633 100%);--g:#d8b56a;--ink:#070605}
+.goldtxt{background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.f{position:relative;overflow:hidden;background:var(--ink);color:#efe3c4;font-family:Montserrat,sans-serif}
+.bg{position:absolute;left:0;right:0;top:0;background:url(skyline.svg) center bottom/cover;filter:saturate(1.05) contrast(1.05)}
+.bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,5,.35) 0%,transparent 22%,rgba(7,6,5,.3) 55%,rgba(7,6,5,.55) 80%,var(--ink) 100%)}
+.vign{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 30%,transparent 50%,rgba(0,0,0,.6) 100%)}
+.content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.eyebrow{display:flex;align-items:center;gap:22px;font-size:22px;letter-spacing:.5em;font-weight:500;color:#ecdcb2;padding-left:.5em}
+.eyebrow i{width:90px;height:1.5px;background:linear-gradient(90deg,transparent,var(--g))}
+.eyebrow i:last-child{transform:scaleX(-1)}
+.route{display:flex;align-items:center;justify-content:center;gap:26px;font-family:Cinzel,serif;font-weight:600;font-size:46px;letter-spacing:.28em;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+.route .code{font-family:Montserrat;font-size:20px;letter-spacing:.3em;color:var(--g);display:block;margin-top:6px;font-weight:600}
+.route .path{width:190px;height:40px}
+.city{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:.82;letter-spacing:.02em;filter:drop-shadow(0 6px 30px rgba(0,0,0,.7))}
+.sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;color:#f1e6c8;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.price{position:relative;border:1.5px solid rgba(216,181,106,.7);background:linear-gradient(180deg,rgba(10,8,6,.72),rgba(10,8,6,.88));backdrop-filter:blur(6px);padding:30px 70px 26px}
+.price:before{content:"";position:absolute;inset:8px;border:1px solid rgba(216,181,106,.25)}
+.price .lbl{font-size:21px;letter-spacing:.42em;color:#d9c79f;font-weight:500;padding-left:.42em}
+.price .amt{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1;margin:4px 0 10px}
+.price .amt sup{font-size:.34em;vertical-align:1.2em;margin-left:8px}
+.price .note{font-size:19px;letter-spacing:.12em;color:#bfae86}
+.price .note b{color:#efe3c4;font-weight:600}
+.perks{display:flex;justify-content:center}
+.perk{display:flex;flex-direction:column;align-items:center;gap:14px;font-size:17px;letter-spacing:.2em;font-weight:600;color:#e8dcc0;line-height:1.35}
+.perk .ic{width:78px;height:78px;border-radius:50%;border:1.5px solid var(--g);display:grid;place-items:center;background:radial-gradient(circle,rgba(216,181,106,.14),transparent 70%)}
+.perk svg{width:38px;height:38px;stroke:var(--g);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.board{width:100%;border-top:1px solid rgba(216,181,106,.35);border-bottom:1px solid rgba(216,181,106,.35)}
+.board h3{font-family:Cinzel;font-weight:600;letter-spacing:.32em;color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.d{display:flex;flex-direction:column;align-items:center}
+.d .c{font-family:Montserrat;font-weight:300;letter-spacing:.12em;color:#fff}
+.d .n{letter-spacing:.3em;color:#bfa871;font-weight:600}
+.cta{display:flex;align-items:center;border-radius:999px;background:var(--gold);color:#120e08;box-shadow:0 0 0 1.5px rgba(255,243,201,.5) inset,0 20px 60px rgba(216,181,106,.25)}
+.cta .ghost{border-radius:50%;background:#120e08;display:grid;place-items:center}
+.cta .ghost svg{fill:#f3dc9a}
+.cta .t1{font-weight:600;letter-spacing:.24em}
+.cta .t2{font-weight:700;letter-spacing:.01em;line-height:1}
+.dm{font-family:"Cormorant Garamond",serif;font-style:italic;color:#e6d6ad}
+.dm b{font-style:normal;font-family:Montserrat;font-weight:700;letter-spacing:.1em;color:var(--g);font-size:.8em}
+.trust{display:flex;justify-content:center;gap:34px;font-size:16px;letter-spacing:.22em;color:#bfae86;font-weight:500}
+.trust span:before{content:"◆";color:var(--g);font-size:10px;margin-right:12px;vertical-align:3px}
+.foot{font-family:Cinzel;letter-spacing:.55em;color:#a89366;padding-left:.55em}
+
+/* ===== STORY 1080x1920 ===== */
+.story{width:1080px;height:1920px}
+.story .bg{height:1300px}
+.story .content{padding:110px 70px 90px}
+.story .route{margin-top:70px}
+.story .city{font-size:250px;margin-top:6px}
+.story .sub{font-size:42px;margin-top:22px}
+.story .price{margin-top:auto}
+.story .price .amt{font-size:200px}
+.story .perks{gap:58px;margin-top:56px}
+.story .board{margin-top:58px;padding:34px 0 30px}
+.story .board h3{font-size:22px;margin-bottom:26px}
+.story .grid{row-gap:24px}
+.story .d .c{font-size:44px}.story .d .n{font-size:14px;margin-top:4px}
+.story .cta{margin-top:54px;padding:16px 56px 16px 16px;gap:30px}
+.story .cta .ghost{width:96px;height:96px}.story .cta .ghost svg{width:52px;height:52px}
+.story .cta .t1{font-size:17px}.story .cta .t2{font-size:52px;margin-top:4px}
+.story .dm{font-size:32px;margin-top:26px}
+.story .trust{margin-top:40px}
+.story .foot{font-size:18px;margin-top:30px}
+
+/* ===== POST 1080x1350 ===== */
+.post{width:1080px;height:1350px}
+.post .bg{height:960px}
+.post .content{padding:70px 70px 60px}
+.post .route{font-size:36px;margin-top:40px}
+.post .route .path{width:150px}
+.post .city{font-size:190px;margin-top:4px}
+.post .sub{font-size:34px;margin-top:14px}
+.post .mid{display:flex;align-items:center;gap:50px;margin-top:auto}
+.post .price{padding:24px 50px 20px}
+.post .price .lbl{font-size:17px}
+.post .price .amt{font-size:150px}
+.post .price .note{font-size:16px}
+.post .perks{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.post .perk{font-size:14px;gap:10px}
+.post .perk .ic{width:64px;height:64px}.post .perk svg{width:30px;height:30px}
+.post .destline{margin-top:40px;font-size:17px;letter-spacing:.32em;color:#bfa871;font-weight:500}
+.post .destline b{color:var(--g)}
+.post .cta{margin-top:34px;padding:12px 46px 12px 12px;gap:24px}
+.post .cta .ghost{width:76px;height:76px}.post .cta .ghost svg{width:42px;height:42px}
+.post .cta .t1{font-size:14px}.post .cta .t2{font-size:42px;margin-top:3px}
+.post .foot{font-size:15px;margin-top:30px}
+</style></head><body>
+
+<template id="ghost"><svg viewBox="0 0 24 24"><path d="M12 2.5c3.3 0 5.6 2.5 5.6 5.7v2.4c.5.2 1.3-.3 1.8-.1.6.3.4 1-.2 1.3-.7.4-1.8.6-1.7 1.3.5 1.9 2.2 3.4 3.8 3.8.5.1.5.7 0 .9-1 .5-2 .4-2.3.9-.2.4 0 1-.6 1.1-.9.2-1.9-.3-3 .1-1.2.5-1.9 1.6-3.4 1.6s-2.2-1.1-3.4-1.6c-1.1-.4-2.1.1-3-.1-.6-.1-.4-.7-.6-1.1-.3-.5-1.3-.4-2.3-.9-.5-.2-.5-.8 0-.9 1.6-.4 3.3-1.9 3.8-3.8.1-.7-1-.9-1.7-1.3-.6-.3-.8-1-.2-1.3.5-.2 1.3.3 1.8.1V8.2c0-3.2 2.3-5.7 5.6-5.7z"/></svg></template>
+
+<!-- ================= STORY ================= -->
+<div class="f story" id="story">
+  <div class="bg"></div><div class="vign"></div>
+  <div class="content">
+    <div class="eyebrow"><i></i>VOYAGEZ SANS LIMITES<i></i></div>
+    <div class="route">
+      <div>CDG<span class="code">PARIS</span></div>
+      <svg class="path" viewBox="0 0 190 40"><path d="M4 30 Q95 -8 186 30" fill="none" stroke="#d8b56a" stroke-width="1.6" stroke-dasharray="3 6"/><circle cx="4" cy="30" r="3.5" fill="#d8b56a"/><circle cx="186" cy="30" r="3.5" fill="#d8b56a"/><path transform="translate(83 1) rotate(8)" fill="#f3dc9a" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" style="transform-box:fill-box;transform-origin:center;rotate:90deg"/></svg>
+      <div>DXB<span class="code">DUBAÏ</span></div>
+    </div>
+    <div class="city goldtxt">Dubaï</div>
+    <div class="sub">Bien plus qu'une destination — une expérience.</div>
+
+    <div class="price">
+      <div class="lbl">BUSINESS CLASS · DÈS</div>
+      <div class="amt goldtxt">750<sup>€</sup></div>
+      <div class="note">selon dates & disponibilités · <b>jusqu'à 1 200 €</b></div>
+    </div>
+
+    <div class="perks">
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4v9a3 3 0 0 0 3 3h8"/><path d="M8 11h7a3 3 0 0 1 3 3v6"/><path d="M5 20h6"/></svg></div>SIÈGE<br>FULL FLAT</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M17 21V3c-2 1-3 4-3 7h3"/></svg></div>REPAS<br>GASTRONOMIQUE</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M9 11v5M15 11v5"/></svg></div>BAGAGES<br>INCLUS</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></div>CONFORT<br>PREMIUM</div>
+    </div>
+
+    <div class="board">
+      <h3>AUTRES DÉPARTS DISPONIBLES</h3>
+      <div class="grid">
+        <div class="d"><span class="c">HKT</span><span class="n">PHUKET</span></div>
+        <div class="d"><span class="c">DPS</span><span class="n">BALI</span></div>
+        <div class="d"><span class="c">MIA</span><span class="n">MIAMI</span></div>
+        <div class="d"><span class="c">DSS</span><span class="n">DAKAR</span></div>
+        <div class="d"><span class="c">LAX</span><span class="n">LOS ANGELES</span></div>
+        <div class="d"><span class="c">HND</span><span class="n">TOKYO</span></div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="ghost" data-ghost></div>
+      <div style="text-align:left"><div class="t1">AJOUTE-MOI SUR SNAPCHAT</div><div class="t2">@endofera0</div></div>
+    </div>
+    <div class="dm">Envoie <b>« DUBAÏ »</b> en message pour recevoir ton devis</div>
+    <div class="trust"><span>RÉSERVATION RAPIDE</span><span>TARIFS NÉGOCIÉS</span><span>SUIVI PERSONNALISÉ</span></div>
+    <div class="foot">LE MONDE EN BUSINESS CLASS</div>
+  </div>
+</div>
+
+<!-- ================= POST ================= -->
+<div class="f post" id="post">
+  <div class="bg"></div><div class="vign"></div>
+  <div class="content">
+    <div class="eyebrow" style="font-size:18px"><i></i>VOYAGEZ SANS LIMITES<i></i></div>
+    <div class="route">
+      <div>CDG</div>
+      <svg class="path" viewBox="0 0 190 40"><path d="M4 30 Q95 -8 186 30" fill="none" stroke="#d8b56a" stroke-width="1.6" stroke-dasharray="3 6"/><circle cx="4" cy="30" r="3.5" fill="#d8b56a"/><circle cx="186" cy="30" r="3.5" fill="#d8b56a"/></svg>
+      <div>DXB</div>
+    </div>
+    <div class="city goldtxt">Dubaï</div>
+    <div class="sub">en Business Class</div>
+
+    <div class="mid">
+      <div class="price">
+        <div class="lbl">DÈS</div>
+        <div class="amt goldtxt">750<sup>€</sup></div>
+        <div class="note">jusqu'à <b>1 200 €</b> selon dates</div>
+      </div>
+      <div class="perks">
+        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4v9a3 3 0 0 0 3 3h8"/><path d="M8 11h7a3 3 0 0 1 3 3v6"/><path d="M5 20h6"/></svg></div>FULL FLAT</div>
+        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M17 21V3c-2 1-3 4-3 7h3"/></svg></div>GASTRONOMIE</div>
+        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M9 11v5M15 11v5"/></svg></div>BAGAGES</div>
+        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></div>PREMIUM</div>
+      </div>
+    </div>
+
+    <div class="destline">AUSSI : <b>PHUKET · BALI · MIAMI · DAKAR · LA · TOKYO</b></div>
+    <div class="cta">
+      <div class="ghost" data-ghost></div>
+      <div style="text-align:left"><div class="t1">AJOUTE-MOI SUR SNAPCHAT</div><div class="t2">@endofera0</div></div>
+    </div>
+    <div class="foot">LE MONDE EN BUSINESS CLASS</div>
+  </div>
+</div>
+<script>document.querySelectorAll('[data-ghost]').forEach(e=>e.append(document.getElementById('ghost').content.cloneNode(true)))</script>
+</body></html>
