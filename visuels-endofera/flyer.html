@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -11,6 +11,7 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,5,.35) 0%,transparent 22%,rgba(7,6,5,.3) 55%,rgba(7,6,5,.55) 80%,var(--ink) 100%)}
 .vign{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 30%,transparent 50%,rgba(0,0,0,.6) 100%)}
 .content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.brandtop{font-family:Cinzel,serif;font-weight:600;font-size:30px;letter-spacing:.34em;padding-left:.34em;margin-bottom:22px}
 .eyebrow{display:flex;align-items:center;gap:22px;font-size:22px;letter-spacing:.5em;font-weight:500;color:#ecdcb2;padding-left:.5em}
 .eyebrow i{width:90px;height:1.5px;background:linear-gradient(90deg,transparent,var(--g))}
 .eyebrow i:last-child{transform:scaleX(-1)}
@@ -50,8 +51,8 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 /* ===== STORY 1080x1920 ===== */
 .story{width:1080px;height:1920px}
 .story .bg{height:1300px}
-.story .content{padding:110px 70px 90px}
-.story .route{margin-top:70px}
+.story .content{padding:70px 70px 80px}
+.story .route{margin-top:56px}
 .story .city{font-size:250px;margin-top:6px}
 .story .sub{font-size:42px;margin-top:22px}
 .story .price{margin-top:auto}
@@ -71,8 +72,8 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 /* ===== POST 1080x1350 ===== */
 .post{width:1080px;height:1350px}
 .post .bg{height:960px}
-.post .content{padding:70px 70px 60px}
-.post .route{font-size:36px;margin-top:40px}
+.post .content{padding:46px 70px 50px}
+.post .route{font-size:36px;margin-top:28px}
 .post .route .path{width:150px}
 .post .city{font-size:190px;margin-top:4px}
 .post .sub{font-size:34px;margin-top:14px}
@@ -98,30 +99,31 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 <div class="f story" id="story">
   <div class="bg"></div><div class="vign"></div>
   <div class="content">
-    <div class="eyebrow"><i></i>VOYAGEZ SANS LIMITES<i></i></div>
+    <div class="brandtop goldtxt">FLY &amp; MORE</div>
+    <div class="eyebrow"><i></i>TRAVEL WITHOUT LIMITS<i></i></div>
     <div class="route">
       <div>CDG<span class="code">PARIS</span></div>
       <svg class="path" viewBox="0 0 190 40"><path d="M4 30 Q95 -8 186 30" fill="none" stroke="#d8b56a" stroke-width="1.6" stroke-dasharray="3 6"/><circle cx="4" cy="30" r="3.5" fill="#d8b56a"/><circle cx="186" cy="30" r="3.5" fill="#d8b56a"/><path transform="translate(83 1) rotate(8)" fill="#f3dc9a" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" style="transform-box:fill-box;transform-origin:center;rotate:90deg"/></svg>
-      <div>DXB<span class="code">DUBAÏ</span></div>
+      <div>DXB<span class="code">DUBAI</span></div>
     </div>
-    <div class="city goldtxt">Dubaï</div>
-    <div class="sub">Bien plus qu'une destination — une expérience.</div>
+    <div class="city goldtxt">Dubai</div>
+    <div class="sub">More than a destination — an experience.</div>
 
     <div class="price">
-      <div class="lbl">BUSINESS CLASS · DÈS</div>
+      <div class="lbl">BUSINESS CLASS · FROM</div>
       <div class="amt goldtxt">750<sup>€</sup></div>
-      <div class="note">selon dates & disponibilités · <b>jusqu'à 1 200 €</b></div>
+      <div class="note">up to <b>1,200 €</b> depending on dates<br><b style="display:inline-block;margin-top:10px;letter-spacing:.3em;color:#f3dc9a">FIRST CLASS ON REQUEST</b></div>
     </div>
 
     <div class="perks">
-      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4v9a3 3 0 0 0 3 3h8"/><path d="M8 11h7a3 3 0 0 1 3 3v6"/><path d="M5 20h6"/></svg></div>SIÈGE<br>FULL FLAT</div>
-      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M17 21V3c-2 1-3 4-3 7h3"/></svg></div>REPAS<br>GASTRONOMIQUE</div>
-      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M9 11v5M15 11v5"/></svg></div>BAGAGES<br>INCLUS</div>
-      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></div>CONFORT<br>PREMIUM</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4v9a3 3 0 0 0 3 3h8"/><path d="M8 11h7a3 3 0 0 1 3 3v6"/><path d="M5 20h6"/></svg></div>FULL FLAT<br>SEAT</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M17 21V3c-2 1-3 4-3 7h3"/></svg></div>FINE<br>DINING</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M9 11v5M15 11v5"/></svg></div>BAGGAGE<br>INCLUDED</div>
+      <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></div>PREMIUM<br>COMFORT</div>
     </div>
 
     <div class="board">
-      <h3>AUTRES DÉPARTS DISPONIBLES</h3>
+      <h3>MORE DESTINATIONS AVAILABLE</h3>
       <div class="grid">
         <div class="d"><span class="c">HKT</span><span class="n">PHUKET</span></div>
         <div class="d"><span class="c">DPS</span><span class="n">BALI</span></div>
@@ -134,11 +136,11 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 
     <div class="cta">
       <div class="ghost" data-ghost></div>
-      <div style="text-align:left"><div class="t1">AJOUTE-MOI SUR SNAPCHAT</div><div class="t2">@endofera0</div></div>
+      <div style="text-align:left"><div class="t1">ADD ME ON SNAPCHAT</div><div class="t2">@endofera0</div></div>
     </div>
-    <div class="dm">Envoie <b>« DUBAÏ »</b> en message pour recevoir ton devis</div>
-    <div class="trust"><span>RÉSERVATION RAPIDE</span><span>TARIFS NÉGOCIÉS</span><span>SUIVI PERSONNALISÉ</span></div>
-    <div class="foot">LE MONDE EN BUSINESS CLASS</div>
+    <div class="dm">Send <b>“DUBAI”</b> in a message to get your quote</div>
+    <div class="trust"><span>FAST BOOKING</span><span>NEGOTIATED FARES</span><span>PERSONAL SUPPORT</span></div>
+    <div class="foot">THE WORLD IN BUSINESS &amp; FIRST CLASS</div>
   </div>
 </div>
 
@@ -146,35 +148,36 @@ body{background:#222;display:flex;flex-direction:column;gap:40px;padding:0}
 <div class="f post" id="post">
   <div class="bg"></div><div class="vign"></div>
   <div class="content">
-    <div class="eyebrow" style="font-size:18px"><i></i>VOYAGEZ SANS LIMITES<i></i></div>
+    <div class="brandtop goldtxt" style="font-size:24px;margin-bottom:16px">FLY &amp; MORE</div>
+    <div class="eyebrow" style="font-size:18px"><i></i>TRAVEL WITHOUT LIMITS<i></i></div>
     <div class="route">
       <div>CDG</div>
       <svg class="path" viewBox="0 0 190 40"><path d="M4 30 Q95 -8 186 30" fill="none" stroke="#d8b56a" stroke-width="1.6" stroke-dasharray="3 6"/><circle cx="4" cy="30" r="3.5" fill="#d8b56a"/><circle cx="186" cy="30" r="3.5" fill="#d8b56a"/></svg>
       <div>DXB</div>
     </div>
-    <div class="city goldtxt">Dubaï</div>
-    <div class="sub">en Business Class</div>
+    <div class="city goldtxt">Dubai</div>
+    <div class="sub">in Business &amp; First Class</div>
 
     <div class="mid">
       <div class="price">
-        <div class="lbl">DÈS</div>
+        <div class="lbl">FROM</div>
         <div class="amt goldtxt">750<sup>€</sup></div>
-        <div class="note">jusqu'à <b>1 200 €</b> selon dates</div>
+        <div class="note">up to <b>1,200 €</b> · First on request</div>
       </div>
       <div class="perks">
         <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4v9a3 3 0 0 0 3 3h8"/><path d="M8 11h7a3 3 0 0 1 3 3v6"/><path d="M5 20h6"/></svg></div>FULL FLAT</div>
-        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M17 21V3c-2 1-3 4-3 7h3"/></svg></div>GASTRONOMIE</div>
-        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M9 11v5M15 11v5"/></svg></div>BAGAGES</div>
+        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M17 21V3c-2 1-3 4-3 7h3"/></svg></div>FINE DINING</div>
+        <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M9 11v5M15 11v5"/></svg></div>BAGGAGE</div>
         <div class="perk"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M9 3l3 18 3-18"/></svg></div>PREMIUM</div>
       </div>
     </div>
 
-    <div class="destline">AUSSI : <b>PHUKET · BALI · MIAMI · DAKAR · LA · TOKYO</b></div>
+    <div class="destline">ALSO: <b>PHUKET · BALI · MIAMI · DAKAR · LA · TOKYO</b></div>
     <div class="cta">
       <div class="ghost" data-ghost></div>
-      <div style="text-align:left"><div class="t1">AJOUTE-MOI SUR SNAPCHAT</div><div class="t2">@endofera0</div></div>
+      <div style="text-align:left"><div class="t1">ADD ME ON SNAPCHAT</div><div class="t2">@endofera0</div></div>
     </div>
-    <div class="foot">LE MONDE EN BUSINESS CLASS</div>
+    <div class="foot">THE WORLD IN BUSINESS &amp; FIRST CLASS</div>
   </div>
 </div>
 <script>document.querySelectorAll('[data-ghost]').forEach(e=>e.append(document.getElementById('ghost').content.cloneNode(true)))</script>
